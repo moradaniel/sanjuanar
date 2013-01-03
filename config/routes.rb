@@ -1,5 +1,13 @@
 Sanjuanar::Application.routes.draw do
+  get "point_of_interests/index"
+
+  # the root is the homepage
+  root :to => "point_of_interests#index"
+
   resources :purchases
+
+  # this is a resource route
+  resources :point_of_interests
 
 
   # The priority is based upon order of creation:
