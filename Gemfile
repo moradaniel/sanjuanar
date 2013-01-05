@@ -28,7 +28,7 @@ end
 
 group :test do
   gem 'cucumber-rails'  , '1.0.6'     #this version is compatible with the one used in "Rails in Action" book
-  gem 'capybara'
+  gem 'capybara', '1.1.2'
   gem 'database_cleaner'
 end
 
