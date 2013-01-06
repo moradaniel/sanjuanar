@@ -12,8 +12,13 @@ class PointOfInterestsController < ApplicationController
 
   def create
     @pointOfInterest = PointOfInterest.new(params[:point_of_interest])
-    @pointOfInterest.save
-    flash[:notice] = 'Point of Interest has been created.'
-    redirect_to @pointOfInterest
+    if @pointOfInterest.save
+      flash[:notice] = 'Point of Interest has been created.'
+      redirect_to @pointOfInterest
+    else
+      flash[:alert] = 'Point of Interest has not been created.'
+      render :action=>"new"
+    end
+
   end
 end
