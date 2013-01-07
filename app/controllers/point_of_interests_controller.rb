@@ -1,5 +1,6 @@
 class PointOfInterestsController < ApplicationController
   def index
+    @pointOfInterests = PointOfInterest.all
   end
 
   def show

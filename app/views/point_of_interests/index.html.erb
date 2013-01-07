@@ -1,3 +1,7 @@
-<h1>PointOfInterests#index</h1>
-<p>Find me in app/views/point_of_interests/index.html.erb</p>
-<%= link_to "New Point of Interest", new_point_of_interest_path%>
+<h2>Points of Interest</h2>
+   <%= link_to "New Point of Interest", new_point_of_interest_path%>
+<ul>
+  <% @pointOfInterests.each do |pointOfInterest| %>
+      <li><%= link_to pointOfInterest.name,pointOfInterest %></li>
+  <% end %>
+</ul>

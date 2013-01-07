@@ -31,6 +31,10 @@ group :test do
   gem 'cucumber-rails'  , '1.0.6'     #this version is compatible with the one used in "Rails in Action" book
   gem 'capybara', '1.1.2'
   gem 'database_cleaner'
+
+  #Factories allow to create new example objects for all of your models in a simple
+  #and elegant syntax.
+  gem 'factory_girl',  '2.1.0'
 end
 
 # To use ActiveModel has_secure_password
