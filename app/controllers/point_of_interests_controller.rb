@@ -37,4 +37,14 @@ class PointOfInterestsController < ApplicationController
       render :action=>"edit"
     end
   end
+
+  def destroy
+    @pointOfInterest = PointOfInterest.find(params[:id])
+    if @pointOfInterest.destroy
+      flash[:notice] = 'Point of Interest has been deleted.'
+    else
+      flash[:alert] = 'Point of Interest has not been deleted.'
+    end
+    redirect_to point_of_interests_path
+  end
 end
