@@ -9,18 +9,21 @@
     function on_load()
     {
 
-    var lat = "-31.537167100975058";
-    var lng = "-68.52523148059845";
+    var lat = null;
+    var lng = null;
 
 
     <% if !@pointOfInterest.id.nil? %>
-        <%#var lat = <%= @pointOfInterest.lat %>;
-        <%#var lng = <%= @pointOfInterest.lng %>;
+        lat = <%= @pointOfInterest.lat %>;
+        lng = <%= @pointOfInterest.lng %>;
 
         set_map_and_addons(lat,lng);
 
     <% else %>
        <%# centers the map on a city %>
+
+       lat = "-31.537167100975058";
+       lng = "-68.52523148059845";
 
        set_map_and_addons(lat,lng);
 
@@ -38,14 +41,14 @@
             var lat = event.latLng.lat();
             var lng = event.latLng.lng();
 
-            document.getElementById('poi_lat').value = lat;
-            document.getElementById('poi_lng').value = lng;
+            document.getElementById('point_of_interest_lat').value = lat;
+            document.getElementById('point_of_interest_lng').value = lng;
 
         });
 
         google.maps.event.addListener(map, 'click', function(event){
-            document.getElementById('poi_lat').value = event.latLng.lat();
-            document.getElementById('poi_lng').value = event.latLng.lng();
+            document.getElementById('point_of_interest_lat').value = event.latLng.lat();
+            document.getElementById('point_of_interest_lng').value = event.latLng.lng();
 
             if (marker == null)
             {
@@ -80,8 +83,8 @@
             draggable: true
         });
 
-        document.getElementById('poi_lat').value = lat;
-        document.getElementById('poi_lng').value = lng;
+        document.getElementById('point_of_interest_lat').value = lat;
+        document.getElementById('point_of_interest_lng').value = lng;
     }
 
     <%# Resets the map to the new selected city %>
@@ -115,8 +118,8 @@
 </p>
 
     <!-- Holds Poi's location -->
-    <input type="text" id="poi_lat"  name="poi[lat]" HIDDEN></input>
-    <input type="text" id="poi_lng" name="poi[lng]" HIDDEN></input>
+    <input type="text" id="point_of_interest_lat"  name="point_of_interest[lat]" HIDDEN></input>
+    <input type="text" id="point_of_interest_lng" name="point_of_interest[lng]" HIDDEN></input>
 
 
     <!-- Map canvas -->

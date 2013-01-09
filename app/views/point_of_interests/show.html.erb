@@ -6,11 +6,8 @@
 
     function on_load()
     {
-        var lat = "-31.537167100975058";
-        var lng = "-68.52523148059845";
-
         map= new google.maps.Map(document.getElementById('map_canvas'), {
-            center: new google.maps.LatLng(lat<%#= @pointOfInterest.lat %>,lng <%#= @pointOfInterest.lng %>),
+            center: new google.maps.LatLng(<%= @pointOfInterest.lat %>, <%= @pointOfInterest.lng %>),
             zoom: 17,
             mapTypeId: google.maps.MapTypeId.HYBRID,
             disableDefaultUI: true
@@ -18,7 +15,7 @@
 
 
         marker = new google.maps.Marker({
-            position: new google.maps.LatLng(lat<%#= @pointOfInterest.lat.to_s %>, lng<%#= @pointOfInterest.lng.to_s %>),
+            position: new google.maps.LatLng(<%= @pointOfInterest.lat.to_s %>, <%= @pointOfInterest.lng.to_s %>),
             map: map,
             title: "<%=@pointOfInterest.name.to_s %>"
         });
