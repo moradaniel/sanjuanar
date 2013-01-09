@@ -1,6 +1,46 @@
+<%= javascript_include_tag "http://maps.google.com/maps/api/js?sensor=true" %>
+<script language="javascript">
+
+    var map;
+    var marker = null;
+
+    function on_load()
+    {
+        var lat = "-31.537167100975058";
+        var lng = "-68.52523148059845";
+
+        map= new google.maps.Map(document.getElementById('map_canvas'), {
+            center: new google.maps.LatLng(lat<%#= @pointOfInterest.lat %>,lng <%#= @pointOfInterest.lng %>),
+            zoom: 17,
+            mapTypeId: google.maps.MapTypeId.HYBRID,
+            disableDefaultUI: true
+        });
+
+
+        marker = new google.maps.Marker({
+            position: new google.maps.LatLng(lat<%#= @pointOfInterest.lat.to_s %>, lng<%#= @pointOfInterest.lng.to_s %>),
+            map: map,
+            title: "<%=@pointOfInterest.name.to_s %>"
+        });
+
+    }
+
+    $(document).ready(function(){
+
+        on_load();
+
+    });
+</script>
+
+
 <% title(@pointOfInterest.name, "Point of Interest") %>
 
 <h2><%= @pointOfInterest.name %></h2>
+
+<!-- canvas for the map -->
+<div style=" width:50%; height:50%; float:right">
+  <div id="map_canvas" style="width:330px; height:390px; text-align:center;"></div>
+</div>
 
 <%= link_to 'Edit Point of Interest', edit_point_of_interest_path %>
 <%= link_to "Delete Point of Interest", @pointOfInterest,:method => :delete, :confirm => "Are you sure you want to delete this Point of Interest?" %>

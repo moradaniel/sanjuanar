@@ -9,17 +9,18 @@
     function on_load()
     {
 
+    var lat = "-31.537167100975058";
+    var lng = "-68.52523148059845";
 
 
     <% if !@pointOfInterest.id.nil? %>
-        var lat = <%= @pointOfInterest.lat %>;
-        var lng = <%= @pointOfInterest.lng %>;
+        <%#var lat = <%= @pointOfInterest.lat %>;
+        <%#var lng = <%= @pointOfInterest.lng %>;
+
         set_map_and_addons(lat,lng);
 
     <% else %>
        <%# centers the map on a city %>
-       var lat = "-31.537167100975058";
-       var lng = "-68.52523148059845";
 
        set_map_and_addons(lat,lng);
 
