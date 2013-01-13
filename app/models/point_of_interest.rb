@@ -5,4 +5,6 @@ class PointOfInterest < ActiveRecord::Base
   geocoded_by :address, :latitude  => :lat, :longitude => :lng # ActiveRecord
   validates :lat, :presence => true
   validates :lng, :presence => true
+
+  has_many :opinions
 end

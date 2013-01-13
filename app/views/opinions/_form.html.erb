@@ -1,0 +1,16 @@
+
+
+<%= form_for([@pointOfInterest,@opinion]) do |f| %>
+    <%= f.error_messages %>
+<p>
+    <%= f.label :title, "Title" %>
+    <%= f.text_field :title %>
+</p>
+    <p>
+      <%= f.label :description, "Description" %>
+      <%= f.text_field :description %>
+    </p>
+
+<%= f.submit %>
+<% end %>
+

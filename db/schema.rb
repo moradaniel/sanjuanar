@@ -11,7 +11,17 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130109160441) do
+ActiveRecord::Schema.define(:version => 20130112233815) do
+
+  create_table "opinions", :force => true do |t|
+    t.string   "title",                :null => false
+    t.string   "description",          :null => false
+    t.integer  "point_of_interest_id", :null => false
+    t.datetime "created_at",           :null => false
+    t.datetime "updated_at",           :null => false
+  end
+
+  add_index "opinions", ["point_of_interest_id"], :name => "index_opinions_on_point_of_interest_id"
 
   create_table "point_of_interests", :force => true do |t|
     t.string   "name",       :null => false

@@ -7,7 +7,9 @@ Sanjuanar::Application.routes.draw do
   resources :purchases
 
   # this is a resource route
-  resources :point_of_interests
+  resources :point_of_interests do
+    resources :opinions
+  end
 
 
   # The priority is based upon order of creation:
