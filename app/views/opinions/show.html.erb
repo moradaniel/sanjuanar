@@ -2,3 +2,5 @@
   <h2><%= @opinion.title %></h2>
   <%= simple_format(@opinion.description)%>
 </div>
+
+<%= link_to 'Edit Opinion', [:edit, @pointOfInterest, @opinion] %>

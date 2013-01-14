@@ -6,5 +6,5 @@ class PointOfInterest < ActiveRecord::Base
   validates :lat, :presence => true
   validates :lng, :presence => true
 
-  has_many :opinions
+  has_many :opinions , :dependent =>:delete_all
 end
