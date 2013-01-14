@@ -41,6 +41,15 @@ class OpinionsController < ApplicationController
 
   end
 
+  def destroy
+    if @opinion.destroy
+      flash[:notice] = 'Opinion has been deleted.'
+    else
+      flash[:alert] = 'Opinion has not been deleted.'
+    end
+    redirect_to @pointOfInterest
+  end
+
   private
   def find_point_of_interest
     @pointOfInterest = PointOfInterest.find(params[:point_of_interest_id])
