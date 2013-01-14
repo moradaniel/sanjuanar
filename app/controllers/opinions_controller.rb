@@ -26,6 +26,21 @@ class OpinionsController < ApplicationController
 
   end
 
+  def edit
+
+  end
+
+  def update
+    if @opinion.update_attributes(params[:opinion])
+      flash[:notice] = 'Opinion has been updated.'
+      redirect_to [@pointOfInterest, @opinion]
+    else
+      flash[:alert] = 'Opinion has not been updated.'
+      render :action=>"edit"
+    end
+
+  end
+
   private
   def find_point_of_interest
     @pointOfInterest = PointOfInterest.find(params[:point_of_interest_id])
