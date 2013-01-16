@@ -24,11 +24,11 @@ ActiveRecord::Schema.define(:version => 20130115225332) do
   add_index "opinions", ["point_of_interest_id"], :name => "index_opinions_on_point_of_interest_id"
 
   create_table "point_of_interests", :force => true do |t|
-    t.string   "name",       :null => false
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-    t.float    "lat",        :null => false
-    t.float    "lng",        :null => false
+    t.string   "name"
+    t.datetime "created_at",                       :null => false
+    t.datetime "updated_at",                       :null => false
+    t.float    "lat",        :default => -31.538,  :null => false
+    t.float    "lng",        :default => -68.5237, :null => false
     t.string   "address"
   end
 
