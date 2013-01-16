@@ -26,6 +26,9 @@
 
 <h1><%= link_to "SanJuanAR", root_path%></h1>
 <%# This line indicates to the layout where the current action’s template is to be rendered %>
+<nav>
+  <%= link_to "Sign up", new_user_registration_path %>
+</nav>
 <%= yield %>
 
 </body>

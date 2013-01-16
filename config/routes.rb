@@ -1,4 +1,6 @@
 Sanjuanar::Application.routes.draw do
+  devise_for :users
+
   get "point_of_interests/index"
 
   # the root is the homepage

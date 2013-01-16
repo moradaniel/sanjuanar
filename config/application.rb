@@ -58,5 +58,16 @@ module Sanjuanar
 
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'
+
+
+    # This is required by Heroku
+    # On config/application.rb forcing your application to not access the DB
+    # or load models when precompiling your assets, though templates cannot see application objects or methods.
+    # be sure to test rake assets:precompile locally before deploying.
+    # It may expose bugs where your assets reference application objects or methods,
+    # since those are still in scope in development mode regardless of the value of this flag
+    config.assets.initialize_on_precompile = false
+
+
   end
 end

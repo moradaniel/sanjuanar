@@ -9,6 +9,7 @@ gem 'pg'
 
 gem 'geocoder' #To encode latitude and longitude
 
+gem 'devise', '~> 1.4.3' #users management
 
 # Gems used only for assets and not required
 # in production environments by default.
