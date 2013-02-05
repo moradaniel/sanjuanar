@@ -38,6 +38,7 @@ group :test do
   #Factories allow to create new example objects for all of your models in a simple
   #and elegant syntax.
   gem 'factory_girl',  '2.1.0'
+  gem 'email_spec'
 end
 
 # To use ActiveModel has_secure_password
