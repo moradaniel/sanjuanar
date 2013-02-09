@@ -74,6 +74,7 @@ Sanjuanar::Application.configure do
 
   config.action_mailer.smtp_settings = {:address => "smtp.gmail.com",
                                         :port => 587,
+                                        :domain => "tranquil-lake-8538.herokuapp.com",
                                         :user_name            => ENV['SMTP_USERNAME'],
                                         :password             => ENV['SMTP_PASSWORD'],
                                         :authentication       => "plain",
