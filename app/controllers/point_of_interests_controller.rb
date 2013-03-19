@@ -48,7 +48,7 @@ class PointOfInterestsController < ApplicationController
       params[:point_of_interest][:lat]=-31.5380
     end
 
-    if params[:point_of_interest][:lng]
+    if params[:point_of_interest][:lng].blank?
       params[:point_of_interest][:lng]=-68.5237
     end
     #End remove this, added until I know how to set a hidden value in Cucumber
